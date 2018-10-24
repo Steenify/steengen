@@ -1,12 +1,16 @@
+#!/usr/bin/env node
+
 const Promise = require("bluebird");
 const program = require("commander");
-const ncp = Promise.promisify(require('ncp').ncp);
+const path    = require('path')
+const ncp     = Promise.promisify(require('ncp').ncp);
 
 // Config ncp
 ncp.limit = 16;
 
 
-const TEMPLATE_DIR = path.join(__dirname, '..', 'templates')
+const TEMPLATE_DIR = path.join(__dirname, '..', 'templates');
+const VERSION      = require('../package').version;
 
 program
   .name("steengen")
@@ -18,7 +22,7 @@ program
 // ** Utilities
 // ********************************
 function logDone() {
-  console.log('Done');
+  console.log('Done!!');
 }
 
 function handleError(error) {

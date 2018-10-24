@@ -23,6 +23,7 @@ const optimizePlugins =
     : [];
 
 const mode = env === "production" ? "production" : "development";
+const isDev = env === "production" ? false : true;
 
 module.exports = {
   entry: {
@@ -31,7 +32,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "dist/"),
-    filename: "[name].[hash].js",
+    filename: isDev ? "[name].js" : "[name].[hash].js",
     publicPath: "/dist/"
   },
   mode: mode,
@@ -120,7 +121,7 @@ module.exports = {
       "process.env.NODE_ENV": env
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].[hash].css',
+      filename: isDev ? "[name].css" : "[name].[hash].css",
     }),
     new webpack.WatchIgnorePlugin(["node_modules/**/*"]),
     new WebpackAssetsManifest({})

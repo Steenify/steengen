@@ -6,11 +6,6 @@ const app = express();
 const config = require("./webpack.config.js");
 const compiler = webpack(config);
 
-
-function loadManifest() {
-  return require('./dist/manifest.json');
-}
-
 // Configure view engine and directory
 app.set('view engine', 'ejs');
 app.set('views', './templates');
@@ -23,17 +18,6 @@ app.use(
     writeToDisk: true
   })
 );
-
-
-// Load manifest.json to get hash resource urls
-app.use(function manifestMiddleware(req, res, next) {
-  const manifest = loadManifest();
-  res.locals = {
-    manifest: manifest,
-  };
-  next();
-});
-
 
 // *****************************************
 // ** Configure route here
