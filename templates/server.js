@@ -9,6 +9,7 @@ const compiler = webpack(config);
 // Configure view engine and directory
 app.set('view engine', 'ejs');
 app.set('views', './templates');
+app.use('/public', express.static('public'));
 
 // Tell express to use the webpack-dev-middleware and use the webpack.config.js
 // configuration file as a base.
@@ -26,7 +27,7 @@ app.get('/', function (req, res) {
   res.render('pages/home');
 });
 
-app.get('/:page', function (req, res) {
+app.get('/pages/:page', function (req, res) {
   res.render('pages/' + req.params.page);
 });
 

@@ -1,0 +1,22 @@
+// size
+$fullWidth: 100%;
+
+// font
+$font: 'Montserrat';
+$title: 'Pacifico';
+
+// base color
+$nocolor: transparent;
+$white: #ffffff;
+$black: #000000;
+$black_1: #323030;
+$gray: #f6f6f6;
+
+// web color
+$main_color: #f64b7f;
+$second_color: #9ebf8d;
+$text_color: $black;
+$title_color: #303030;
+$border_color: #e3e3e3;
+
+@import './mixin.scss';

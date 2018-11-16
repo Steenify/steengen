@@ -1,0 +1,50 @@
+@import './variable.scss';
+
+.color-main {
+  color: $main_color;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Bootstrap Overrides */
+@media (min-width: $screen-xl) {
+  .container {
+    width: 1170px;
+    max-width: 1170px;
+  }
+}
+
+@media (max-width: $screen-xl) {
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+.container-fluid {
+  max-width: 1920px;
+
+  margin: {
+    right: auto;
+    left: auto;
+  }
+
+  padding: {
+    right: 30px;
+    left: 30px;
+  }
+
+  @media (max-width: $screen-xl) {
+    padding: 0 15px;
+  }
+}
+
+@media (min-width: 992px) {
+  .col-lg-5th {
+    flex: 0 0 20%;
+    max-width: 20%;
+  }
+}

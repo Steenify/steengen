@@ -1,0 +1,23 @@
+@import "./variable.scss";
+
+.nod-breadcrumb {
+  padding-top: 24px;
+
+  .breadcrumb {
+    background: $nocolor;
+    padding-left: 0;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    overflow: auto;
+
+    &-item {
+      a {
+        color: $breadcrumb_text;
+      }
+
+      &.active {
+        color: $breadcrumb_text_active;
+      }
+    }
+  }
+}

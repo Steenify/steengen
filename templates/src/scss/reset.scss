@@ -1,0 +1,139 @@
+@import './variable.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+  outline: none;
+}
+
+img,
+iframe {
+  max-width: 100%
+}
+
+table {
+  width: 100%;
+}
+
+img {
+  border: none;
+  max-width: 100%;
+  height: auto;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+fieldset {
+  border: 2px groove threedface;
+  display: block;
+  padding-block-end: 0.75em;
+  padding-block-start: 0.35em;
+  text-align: center;
+}
+
+fieldset legend {
+  display: inline-block;
+  color: inherit;
+  background: none;
+  vertical-align: top;
+}
+
+::-webkit-selection {
+  background: #000000;
+  color: #ffffff
+}
+
+::-moz-selection {
+  background: #000000;
+  color: #ffffff
+}
+
+::selection {
+  background: #000000;
+  color: #ffffff
+}
+
+::-webkit-input-placeholder {
+  -webkit-transition: text-indent .5s ease, color .5s ease;
+  transition: text-indent .5s ease, color .5s ease;
+  color: #969696
+}
+
+input::-moz-placeholder {
+  color: #969696
+}
+
+::ms-input-placeholder {
+  color: #969696
+}
+
+[placeholder]:focus::-webkit-input-placeholder {
+  text-indent: 10em;
+  color: transparent
+}
+
+
+
+body,
+html {
+  font-family: $font, sans-serif;
+}
+
+.title {
+  font-family: $title, cursive;
+}
+
+.color-main {
+  color: $main_color;
+}
+
+.form-control,
+button,
+input,
+select {
+  outline: none !important;
+  box-shadow: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: $main_color;
+  }
+}
+
+
+// slick arrow custom
+
+.slick-arrow {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: -16px;
+  z-index: 1;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.slick-next {
+  left: -40px;
+}
+
+.slick-prev {
+  right: -40px;
+}

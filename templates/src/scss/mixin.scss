@@ -1,0 +1,124 @@
+/*
+variable mixin em
+  example:
+  p {
+    font-size: em(16px);
+    light-hight: em(24, 30)
+  }
+*/
+
+$font_size_base: 16px;
+$font_size_sm: 14px;
+$font_size_xm: 12px;
+$font_size_xxm: 10px;
+
+@function em($pixels, $context: $font_size_base) {
+  @if (unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return $pixels / $context * 1em;
+}
+
+/*
+responsive mixin
+  example:
+  p {
+    font-size: em(16px);
+    light-hight: em(24, 30)
+  }
+*/
+
+
+$screen-xs: 400px;
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 991px;
+$screen-ml: 1024px;
+$screen-xl: 1200px;
+
+// query sm
+@mixin min-xs {
+  @media (min-width: #{$screen-xs}) {
+    @content;
+  }
+}
+
+@mixin max-xs {
+  @media (max-width: #{$screen-xs}) {
+    @content;
+  }
+}
+
+// query sm
+@mixin min-sm {
+  @media (min-width: #{$screen-sm}) {
+    @content;
+  }
+}
+
+@mixin max-sm {
+  @media (max-width: #{$screen-sm}) {
+    @content;
+  }
+}
+
+// query md
+
+@mixin max-md {
+  @media (max-width: #{$screen-md}) {
+    @content;
+  }
+}
+
+@mixin min-md {
+  @media (min-width: #{$screen-md}) {
+    @content;
+  }
+}
+
+// query lg
+
+@mixin max-lg {
+  @media (max-width: #{$screen-lg}) {
+    @content;
+  }
+}
+
+@mixin min-lg {
+  @media (min-width: #{$screen-lg}) {
+    @content;
+  }
+}
+
+// query xl
+
+@mixin max-xl {
+  @media (max-width: #{$screen-xl}) {
+    @content;
+  }
+}
+
+@mixin min-xl {
+  @media (min-width: #{$screen-xl}) {
+    @content;
+  }
+}
+
+// md to lg and md to ml
+
+@mixin md-to-lg {
+  @media (min-width: #{$screen-md}) and (max-width: #{$screen-lg}) {
+    @content;
+  }
+}
+
+@mixin md-to-lg {
+  @media (min-width: #{$screen-md}) and (max-width: #{$screen-ml}) {
+    @content;
+  }
+}
