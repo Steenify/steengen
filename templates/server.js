@@ -1,9 +1,9 @@
-const express = require("express");
-const webpack = require("webpack");
-const webpackDevMiddleware = require("webpack-dev-middleware");
+const express = require('express');
+const webpack = require('webpack');
+const webpackDevMiddleware = require('webpack-dev-middleware');
 
 const app = express();
-const config = require("./webpack.config.js");
+const config = require('./webpack.config.js');
 const compiler = webpack(config);
 
 // Configure view engine and directory
@@ -16,23 +16,22 @@ app.use('/public', express.static('public'));
 app.use(
   webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath,
-    writeToDisk: true
-  })
+    writeToDisk: true,
+  }),
 );
 
 // *****************************************
 // ** Configure route here
 // *****************************************
-app.get('/', function (req, res) {
+app.get('/', function(req, res) {
   res.render('pages/home');
 });
 
-app.get('/pages/:page', function (req, res) {
+app.get('/:page', function(req, res) {
   res.render('pages/' + req.params.page);
 });
 
-
 // Serve the files on port 3000.
 app.listen(3000, function() {
-  console.log("Example app listening on port 3000!\n");
+  console.log('Example app listening on port 3000!\n');
 });

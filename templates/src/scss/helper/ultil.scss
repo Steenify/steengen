@@ -1,4 +1,4 @@
-@import './variable.scss';
+@import '../variable.scss';
 
 .color-main {
   color: $main_color;
@@ -14,13 +14,6 @@ body {
   .container {
     width: 1170px;
     max-width: 1170px;
-  }
-}
-
-@media (max-width: $screen-xl) {
-  .container {
-    width: 100% !important;
-    max-width: 100% !important;
   }
 }
 

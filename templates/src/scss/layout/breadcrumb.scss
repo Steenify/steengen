@@ -1,4 +1,4 @@
-@import "./variable.scss";
+@import "../variable.scss";
 
 .nod-breadcrumb {
   padding-top: 24px;
@@ -12,11 +12,11 @@
 
     &-item {
       a {
-        color: $breadcrumb_text;
+        color: $text_color;
       }
 
       &.active {
-        color: $breadcrumb_text_active;
+        color: $main_color;
       }
     }
   }

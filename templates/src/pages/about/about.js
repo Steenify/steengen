@@ -1,8 +1,6 @@
 // Import JS
 import "../../common";
-
-// Import css
-import "./home.scss";
+import "./about.scss";
 
 //***************************************
 //      Main program
