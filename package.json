@@ -1,6 +1,6 @@
 {
   "name": "steengen",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Basic frontend generator for Steenify",
   "main": "./bin/index.js",
   "bin": {
