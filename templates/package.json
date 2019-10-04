@@ -1,6 +1,6 @@
 {
   "name": "steengen",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Steenify generator to fasten frontend development",
   "scripts": {
     "dev": "cross-env NODE_ENV=dev node server.js",
